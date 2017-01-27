@@ -10,19 +10,11 @@ router.get("/", function(req, res) {
     burger.getAll(req, res);
 });
 
-// router.post("/", function(req, res) {
-//	var id = burger.addBurger("cheese2");
-//     console.log('router.post("/", function(req, res) {');
-//     cat.create([
-//         "name", "sleepy"
-//     ], [
-//         req.body.name, req.body.sleepy
-//     ], function() {
-//         res.redirect("/");
-//     });
-// });
-
-
+router.post("/", function(req, res) {
+    console.log('router.post("/", function(req, res) {');
+    burger.addBurger(req, res);
+});
+  
 router.put("/:id", function(req, res) {
     console.log('router.put("/:'+req.params.id, +'", function(req, res) {');
     burger.devourBurger(req.params.id, function(data){

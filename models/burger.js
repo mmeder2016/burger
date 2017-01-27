@@ -17,29 +17,15 @@ var burger = {
         });
     },
 
-    addBurger: function(burger_name) {
-        var id;
+    addBurger: function(req, res) {
         var add_query = "INSERT INTO burgers (burger_name, devoured) VALUES (?,?)";
-        connection.query(add_query, [burger_name, false], function(err, res) {
+        connection.query(add_query, [req.body.name, false], function(err, data) {
             if (err) {
                 throw err;
             }
+            res.redirect("/");
             console.log("addBurger res:\n" + res);
         });
-        // See if res has id
-
-        /*
-        var query2 = "SELECT id FROM burgers WHERE burger_name=?";
-        connection.query(query2, [burger.name], function(err, res) {
-        	console.log(res);
-        	id = res[0].id;
-            if (err) {
-                throw err;
-            }
-            connection.end();
-        });
-        */
-        return id;
     },
 
     devourBurger: function(burger_id) {

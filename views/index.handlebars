@@ -6,6 +6,8 @@
         border-style: solid;
         border-color: green;
     	border-width: 1px;
+    	margin: auto;
+		overflow: auto;
     }
 
 	aside {
@@ -15,19 +17,19 @@
     	border-width: 1px;
     	width: 49%;
     }
-    .left-aside {
+    .aside-left {
     	float: left;
     }
-    .right-aside {
+    .aside-right {
     	float: right;
     }
+
     </style>
 </head>
 <body>
-	<h1>index.handlebars </h1>
 	<div class="div-content">
-		<aside class="left-aside">
-			<ul>
+		<aside class="aside-left">
+			<ol type="1">
 			  	{{#each burger_db}}
 					{{#unless this.devoured}}
 						<li>
@@ -35,10 +37,10 @@
 						</li>
 			    	{{/unless}}
 			  	{{/each}}
-			</ul>
+			</ol>
 		</aside>
-		<aside class="right-aside">
-			<ul>
+		<aside class="aside-right">
+			<ol type="1">
 			  	{{#each burger_db}}
 					{{#if this.devoured}}
 						<li>
@@ -46,13 +48,18 @@
 						</li>
 			    	{{/if}}
 			  	{{/each}}
-			</ul>
+			</ol>
 		</aside>
 	</div>
-
-
-
-
-
+	<div class="div-submit">
+		<h2>Add a new Burger</h2>
+		<form class="create-update-form" action="/" method="POST">
+			<div class="form-group">
+				<label for="burg">Burger Name:</label><br>
+				<input type="text" id="burg" name="name">
+			</div>
+		  	<button type="submit">Add Burger</button>
+		</form>
+	</div>
 </body>
 </html>
