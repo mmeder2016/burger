@@ -17,9 +17,7 @@ router.post("/", function(req, res) {
   
 router.put("/:id", function(req, res) {
     console.log('router.put("/:'+req.params.id, +'", function(req, res) {');
-    burger.devourBurger(req.params.id, function(data){
-    	console.log(data);
-    });
+    burger.devourBurger(req, res);
 });
 
 // Export routes for server.js to use.

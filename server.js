@@ -1,6 +1,6 @@
 // INITIALIZE DEPENDENCIES
 var express = require('express');
-var methodoverride = require("method-override");
+var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 
 // Initialize a port number
@@ -10,6 +10,9 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
+
+// Override with POST having ?_method=PUT
+app.use(methodOverride("_method"));
 
 // Configure the body parser
 app.use(bodyParser.json());
