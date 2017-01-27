@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>	index.handlebars </title>
+	<style>
+	.div-content {
+        border-style: solid;
+        border-color: green;
+    	border-width: 1px;
+    }
+
+	aside {
+        text-align: left;
+        border-style: solid;
+        border-color: red;
+    	border-width: 1px;
+    	width: 49%;
+    }
+    .left-aside {
+    	float: left;
+    }
+    .right-aside {
+    	float: right;
+    }
+    </style>
+</head>
+<body>
+	<h1>index.handlebars </h1>
+	<div class="div-content">
+		<aside class="left-aside">
+			<ul>
+			  	{{#each burger_db}}
+					{{#unless this.devoured}}
+						<li>
+					        {{this.burger_name}}
+						</li>
+			    	{{/unless}}
+			  	{{/each}}
+			</ul>
+		</aside>
+		<aside class="right-aside">
+			<ul>
+			  	{{#each burger_db}}
+					{{#if this.devoured}}
+						<li>
+					        {{this.burger_name}}
+						</li>
+			    	{{/if}}
+			  	{{/each}}
+			</ul>
+		</aside>
+	</div>
+
+
+
+
+
+</body>
+</html>
