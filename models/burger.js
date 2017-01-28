@@ -2,6 +2,7 @@ var connection = require("../config/connection.js");
 
 var burger = {
 
+    // Render the Webpage with all the current data
     getAll: function(req, res) {
         console.log('getAll: function(req, res) {');
         var all_query = "SELECT * FROM burgers";
@@ -9,7 +10,7 @@ var burger = {
             if (err) {
                 throw err;
             }
-            // handlebars object
+            // Create handlebars object
             var hbsObj = {
                 burger_db: data
             };
@@ -18,6 +19,7 @@ var burger = {
         });
     },
 
+    // Add new item and then redirect to router.get("/"
     addBurger: function(req, res) {
         console.log('addBurger: function(req, res) {');
         var add_query = "INSERT INTO burgers (burger_name, devoured) VALUES (?,?)";
@@ -30,6 +32,7 @@ var burger = {
         });
     },
 
+    // Update item and then redirect to router.get("/"
     devourBurger: function(req, res) {
         console.log('devourBurger: function(req, res) {');
         console.log('req.params.id:' + req.params.id);
