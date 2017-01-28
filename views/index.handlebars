@@ -1,38 +1,47 @@
-
-<div class="div-content">
-	<aside class="aside-left">
-		<ol type="1">
-			  {{#each burger_db}}
-				{{#unless this.devoured}}
-					<li>
-					    {{this.burger_name}}
-						<form action="/{{this.id}}?_method=PUT" method="POST">
-					    	<button type="submit">DEVOUR IT!</button>
-						</form>
-					</li>
-			    {{/unless}}
-			  {{/each}}
-		</ol>
-	</aside>
-	<aside class="aside-right">
-		<ol type="1">
-			  {{#each burger_db}}
-				{{#if this.devoured}}
-					<li>
-					    {{this.burger_name}}
-					</li>
-			    {{/if}}
-			{{/each}}
-		</ol>
-	</aside>
-</div>
-<div class="div-submit">
-	<h2>Add a new Burger</h2>
-	<form class="create-update-form" action="/" method="POST">
-		<div class="form-group">
-			<label for="burg">Burger Name:</label><br>
-			<input type="text" id="burg" name="name">
+<div class="container">
+	<div class="jumbotron vertical-center">
+		<h1 class="text-center">BURGERS</h1>
+		<hr>
+		<br>
+		<div class="text-center">
+  			<img src="assets/img/burger.png"  class="rounded mx-auto d-block" height="200" width="200" alt="Big Burger">
 		</div>
-		<button type="submit">Add Burger</button>
-	</form>
+	</div>
+	<div class="div-content">
+		<aside class="aside-left">
+			<ol type="1">
+				  {{#each burger_db}}
+					{{#unless this.devoured}}
+						<li>
+						    {{this.burger_name}}
+							<form action="/{{this.id}}?_method=PUT" method="POST">
+						    	<button type="submit">DEVOUR IT!</button>
+							</form>
+						</li>
+				    {{/unless}}
+				  {{/each}}
+			</ol>
+		</aside>
+		<aside class="aside-right">
+			<ol type="1">
+				  {{#each burger_db}}
+					{{#if this.devoured}}
+						<li>
+						    {{this.burger_name}}
+						</li>
+				    {{/if}}
+				{{/each}}
+			</ol>
+		</aside>
+	</div>
+	<div class="div-submit">
+		<h2>Add a new Burger</h2>
+		<form class="create-update-form" action="/" method="POST">
+			<div class="form-group">
+				<label for="burg">Burger Name:</label><br>
+				<input type="text" id="burg" name="name">
+			</div>
+			<button type="submit">Add Burger</button>
+		</form>
+	</div>
 </div>

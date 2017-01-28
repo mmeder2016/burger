@@ -11,7 +11,7 @@ aside {
     border-style: solid;
     border-color: red;
     border-width: 1px;
-    width: 49%;
+    width: 33%;
 }
     
 .aside-left {
@@ -20,4 +20,8 @@ aside {
     
 .aside-right {
     float: right;
+}
+
+img {
+    margin: 0 auto;
 }
