@@ -1,6 +1,3 @@
-CREATE DATABASE burgers_db;
-
-USE burgers_db;
 
 DROP table burgers;
 CREATE TABLE burgers (
